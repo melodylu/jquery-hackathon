@@ -1,0 +1,17 @@
+.centered-container {
+  font-family: 'Oswald', sans-serif;
+  font-style: bold;
+  margin-top: 200px;
+}
+
+.btn-container {
+
+}
+
+.instructions {
+  display: none;
+}
+
+.instructions li {
+  font-size: 18px;
+}
