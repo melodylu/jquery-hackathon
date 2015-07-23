@@ -1,17 +1,113 @@
-.centered-container {
-  font-family: 'Oswald', sans-serif;
-  font-style: bold;
-  margin-top: 200px;
+div.container {
+    margin: 0 auto;
+    width: 600px;
+    padding-top: 20px;
 }
 
-.btn-container {
-
+div.footer {
+    margin: 0 auto;
+    width: 600px;
+    padding-top: 200px;
 }
 
-.instructions {
-  display: none;
+div .choiceBtn {
+    width: 100px;
+    height: 100px;
+    border-radius: 30px;
+    float: left;
+    margin: 10px;
 }
 
-.instructions li {
-  font-size: 18px;
+body {
+    font-family: 'Shadows Into Light', cursive;
+}
+
+#theAnswer {
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 6px;
+}
+
+#score {
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 6px;
+}
+
+.gameTalk {
+    color: rgba(0, 0, 0, .7);
+    text-align: center;
+}
+
+.popup {
+    width: 300px;
+    height: 90px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 1);
+    border-color: rgba(0, 0, 0, .1);
+    border-style: solid;
+    border-width: 1px;
+    position: absolute;
+    top: 210px;
+    margin-left: 150px;
+    margin-right: 150px;
+    font-size: 40px;
+    line-height: 90px;
+    box-shadow: 5px 5px 30px 0px rgba(0, 0, 0, .2);
+}
+
+.glow {
+    box-shadow: 0px 0px 60px 0px rgba(195, 255, 138, 1);
+    /*     border-color: rgba(195, 255, 138, 1);
+    border-style: solid;
+    border-width: 1px;*/
+}
+
+.sadGlow {
+    box-shadow: 0px 0px 60px 0px rgba(155, 0, 0, .9);
+    /*     border-color: rgba(195, 255, 138, 1);
+    border-style: solid;
+    border-width: 1px;*/
+}
+
+.secretWinner {}
+
+p.popup {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+span.red {
+    color: rgba(100, 0, 0, .7);
+    background-color: rgba(255, 0, 0, .05);
+    padding-top: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+span.green {
+    color: rgba(0, 100, 0, .7);
+    background-color: rgba(0, 255, 0, .05);
+    padding-top: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+span.blue {
+    color: rgba(0, 0, 100, .7);
+    background-color: rgba(0, 0, 255, .05);
+    padding-top: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+div.colorBar {
+    display: inline-block;
+    border: solid white 1px;
+    border-radius: 5px;
+    padding-bottom: 15px;
+    padding-top: 100px;
 }
