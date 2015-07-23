@@ -42,24 +42,24 @@ $(document).ready(function() {
                 });
             } else {
                 $('#youLose').show(10, function() {
-                	$('.secretWinner').addClass('sadGlow');
+                    $('.secretWinner').addClass('sadGlow');
                     anywhereClickReset();
                 });
             }
         });
 
         // add this class the old-school way with DOM selectors so that I can finally go to sleep without jQuery and Sizzle exploding about how rgba(blah, blah, blah) looks like an invalid script injection
-		var temp = document.getElementById(theAnswer);
-		$(temp).addClass('secretWinner');
-        
+        var temp = document.getElementById(theAnswer);
+        $(temp).addClass('secretWinner');
+
         // end button generation
 
         // make a pretty awesome header with hinted colors
-        var answerColors = theAnswer.split(', ');
-        answerColors[0] = answerColors[0].slice(5);
-        answerColors[3] = answerColors[0].slice(0, -1);
+        var ACArr = theAnswer.split(', ');
+        ACArr[0] = ACArr[0].slice(5);
+        ACArr[3] = ACArr[0].slice(0, -1);
 
-        var displayAnswer = $('<div>rgb(' + '<div class="colorBar"><span class="red">' + answerColors[0] + '</span></div>, ' + '<span class="green">' + answerColors[1] + '</span>, ' + '<span class="blue">' + answerColors[2] + '</span>' + ')</div>');
+        var displayAnswer = $('<div>rgb(' + '<div class="colorBar"><span class="red">' + ACArr[0] + '</span></div>, ' + '<span class="green">' + ACArr[1] + '</span>, ' + '<span class="blue">' + ACArr[2] + '</span>' + ')</div>');
         // demo color: "rgba(202, 67, 118, 1)""
 
         displayAnswer.attr('id', 'theAnswer');
@@ -71,9 +71,27 @@ $(document).ready(function() {
             $('#scoreDisplay').text(score);
         }
 
- $('span.red').css('padding-top', Math.floor(answerColors[0]*100/255));
- $('span.green').css('padding-top', Math.floor(answerColors[1]*100/255));
- $('span.blue').css('padding-top', Math.floor(answerColors[2]*100/255));
+        $('span.red').css('padding-top', Math.floor(ACArr[0] * 100 / 255));
+        $('span.green').css('padding-top', Math.floor(ACArr[1] * 100 / 255));
+        $('span.blue').css('padding-top', Math.floor(ACArr[2] * 100 / 255));
+
+
+// TODO: maybe I should avoid color theory and just do a 255 scale, % out of 255 for each, then mult that by 255 for new
+        // // this adds a clever brightness div that doesn't help
+        //         var lum = ACArr[0] * 0.299 + ACArr[1] * 0.587 + ACArr[2] * 0.114;
+        //         var lumGray = 'rgba(' + Math.floor(lum) + ', ' + Math.floor(lum) + ', ' + Math.floor(lum) + ', 1)';
+        //         var lumDiv = $('<br><div>' + 'brightness  &nbsp' + '</div>');
+        //         lumDiv.attr('id', 'lum');
+        //         lumDiv.addClass('lum');
+        //         lumDiv.css('background-color', lumGray)
+        //         lumDiv.prependTo(canvas);
+        //         console.log(lum);
+        //         console.log(lumGray);
+
+        //         // Perceived brightness based on RGB values:
+        //         // 0.299 * R + 0.587 * G + 0.114 * B
+        //         // http://stackoverflow.com/questions/596216/formula-to-determine-brightness-of-rgb-color
+
 
     } // end buildNewRound()
 
@@ -98,7 +116,7 @@ $(document).ready(function() {
         displayLose.addClass('gameTalk popup');
         canvas.prepend(displayLose);
 
-        var score = $('<div><p>Score:<span id="scoreDisplay">0</span></p></div>');
+        var score = $('<div><p>Score: <span id="scoreDisplay">0</span></p></div>');
         score.attr('id', 'score');
         score.addClass('gameTalk');
         $('.footer').append(score);
@@ -121,7 +139,7 @@ $(document).ready(function() {
 
         });
     }
-globalAnswer = theAnswer;
+    globalAnswer = theAnswer;
 });
 
 

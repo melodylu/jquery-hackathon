@@ -34,6 +34,18 @@ body {
     letter-spacing: 6px;
 }
 
+.lum {
+    border-radius: 30px;
+    font-size: 20px;
+    display: inline-block;
+    position: absolute;
+    top: 330px;
+    padding-left: 492px;
+    margin-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5;
+}
+
 .gameTalk {
     color: rgba(0, 0, 0, .7);
     text-align: center;
